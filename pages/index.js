@@ -9,7 +9,7 @@ class App extends React.Component {
         return (
             <div>
                 <Head>
-                    <title>2R1h's Page</title>
+                    <title>Site of 2R1h</title>
                 </Head>
                 <WelcomePage/>
             </div>
