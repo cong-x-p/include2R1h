@@ -1,0 +1,28 @@
+.circleImg {
+    border-radius: 100px;
+}
+
+.container {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Welcome{
+    font-weight: 800;
+    font-size: 3rem;
+    margin: 1rem 1rem 1rem 0;
+    letter-spacing: -0.05rem;
+}
+
+.littletips {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 35px;
+}
+
+.self_descripton {
+    margin-top: 15px;
+    font-size: 1rem;
+}
