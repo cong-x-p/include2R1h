@@ -12,7 +12,7 @@ class WelcomePage extends React.Component {
                         <Image
                             priority
                             className={styles.circleImg}
-                            src="/images/me.PNG"
+                            src="/me.PNG"
                             alt="me"
                             height={200}
                             width={200}
