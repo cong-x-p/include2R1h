@@ -22,10 +22,10 @@ class WelcomePage extends React.Component {
                         Welcome to my site
                     </div>
                     <div className={styles.littletips}>
-                        <p>(╯▔▽▔)╯ plz don't go away that quickly<br/>read the passage below, maybe you'll be insterested</p>
+                        <p>(╯▔▽▔)╯ plz do not go away that quickly<br/>read the passage below, maybe you will be insterested</p>
                     </div>
                     <div className={styles.self_descripton}>
-                        I'm Sebastian Cong by the way
+                        I am Sebastian Cong by the way
                     </div>
                 </Container>
             </div>
