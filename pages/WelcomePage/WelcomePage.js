@@ -2,6 +2,20 @@ import * as React from "react";
 import Image from "next/image";
 import Container from "@mui/material/Container";
 import styles from "./WelcomPage.module.css";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import SendIcon from '@mui/icons-material/Send';
+import Stack from '@mui/material/Stack';
+import SvgIcon from '@mui/material/SvgIcon';
+
+function homeIcon(props) {
+    return (
+        <SvgIcon {...props}>
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </SvgIcon>
+    );
+}
 
 class WelcomePage extends React.Component {
     render() {
@@ -19,13 +33,41 @@ class WelcomePage extends React.Component {
                         />
                     </div>
                     <div className={styles.Welcome}>
-                        Welcome to my site
+                        Welcome to my site（*′▽`）
                     </div>
                     <div className={styles.littletips}>
-                        <p>(╯▔▽▔)╯ plz do not go away that quickly<br/>read the passage below, maybe you will be insterested</p>
+                        <p>(╯▔▽▔)╯ plz do not go away that quickly<br/>read the passage below, maybe you will be
+                            insterested</p>
                     </div>
                     <div className={styles.self_descripton}>
-                        I am Sebastian Cong by the way
+                        My name is Sebastian Cong and I am new to web programming. In fact, this is my first attempt to
+                        go live with a web application that is still being perfected. I did my undergrad at Beijing
+                        Institute of Technology and will soon go to the Institute of Computing Technology at the
+                        University of Chinese Academy of Sciences for my master&apos;s degree. I&apos;ll be posting
+                        things on this
+                        site that I think are cool. Also I will leave my github address below and this project will be
+                        open source. Thank you very much for reading this, and it would be great if you could go to
+                        github and star my project.
+                    </div>
+                    <div className={styles.buttonGroup}>
+                        <Stack direction="row" spacing={2}>
+                            <Button variant="outlined" href={"https://github.com/cong-x-p"}>
+                                My Github Page
+                            </Button>
+                            <Button variant="contained" endIcon={<SendIcon/>}>
+                                This is for my own
+                            </Button>
+                        </Stack>
+                    </div>
+                    <div className={styles.webInfo}>
+                        <Typography variant="body2" color="text.secondary" align="center">
+                            {'Copyright © '}
+                            <Link color="inherit" href="https://www.2R1h.me/">
+                                https://www.2R1h.me
+                            </Link>{' '}
+                            {new Date().getFullYear()}
+                            {'.'}
+                        </Typography>
                     </div>
                 </Container>
             </div>
