@@ -7,7 +7,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
-import SvgIcon from '@mui/material/SvgIcon';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 
 class WelcomePage extends React.Component {
     render() {
@@ -43,9 +44,14 @@ class WelcomePage extends React.Component {
                     </div>
                     <div className={styles.buttonGroup}>
                         <Stack direction="row" spacing={2}>
-                            <Button variant="outlined" href={"https://github.com/cong-x-p"}>
+                            <Button variant="contained" href={"https://github.com/cong-x-p"} startIcon={<GitHubIcon/>} color={"secondary"}>
                                 My Github Page
                             </Button>
+                            <Link href={"/myBlog"}>
+                                <Button variant="contained" color="success" startIcon={<LocalOfferIcon/>}>
+                                    My Blog
+                                </Button>
+                            </Link>
                             <Link href={"/SignIn"}>
                                 <Button variant="contained" endIcon={<SendIcon/>}>
                                     This is for my own
