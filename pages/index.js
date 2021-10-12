@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import SignIn from "./SignIn/SignIn";
+import SignIn from "./SignIn";
 import Head from "next/head";
-import WelcomePage from "./WelcomePage/WelcomePage";
+import WelcomePage from "./WelcomePage";
 
 class App extends React.Component {
     render() {

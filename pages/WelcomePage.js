@@ -1,21 +1,13 @@
 import * as React from "react";
 import Image from "next/image";
 import Container from "@mui/material/Container";
-import styles from "./WelcomPage.module.css";
+import styles from "../styles/WelcomPage.module.css";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import SvgIcon from '@mui/material/SvgIcon';
-
-function homeIcon(props) {
-    return (
-        <SvgIcon {...props}>
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-        </SvgIcon>
-    );
-}
 
 class WelcomePage extends React.Component {
     render() {
@@ -54,9 +46,11 @@ class WelcomePage extends React.Component {
                             <Button variant="outlined" href={"https://github.com/cong-x-p"}>
                                 My Github Page
                             </Button>
-                            <Button variant="contained" endIcon={<SendIcon/>}>
-                                This is for my own
-                            </Button>
+                            <Link href={"/SignIn"}>
+                                <Button variant="contained" endIcon={<SendIcon/>}>
+                                    This is for my own
+                                </Button>
+                            </Link>
                         </Stack>
                     </div>
                     <div className={styles.webInfo}>
