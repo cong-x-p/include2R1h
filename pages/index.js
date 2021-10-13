@@ -1,6 +1,4 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
-import SignIn from "./SignIn";
 import Head from "next/head";
 import WelcomePage from "./WelcomePage";
 
@@ -9,7 +7,7 @@ class App extends React.Component {
         return (
             <div>
                 <Head>
-                    <title>Site of 2R1h</title>
+                    <title>2R1h&apos;s Site</title>
                 </Head>
                 <WelcomePage/>
             </div>

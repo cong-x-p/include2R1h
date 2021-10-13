@@ -9,6 +9,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import ClassIcon from '@mui/icons-material/Class';
 
 class WelcomePage extends React.Component {
     render() {
@@ -44,12 +45,18 @@ class WelcomePage extends React.Component {
                     </div>
                     <div className={styles.buttonGroup}>
                         <Stack direction="row" spacing={2}>
-                            <Button variant="contained" href={"https://github.com/cong-x-p"} startIcon={<GitHubIcon/>} color={"secondary"}>
+                            <Button variant="contained" href={"https://github.com/cong-x-p"} startIcon={<GitHubIcon/>}
+                                    color={"secondary"}>
                                 My Github Page
                             </Button>
+                            <Link href={"/Resume"}>
+                                <Button variant={"contained"} color={"error"} startIcon={<ClassIcon/>}>
+                                    My Resume
+                                </Button>
+                            </Link>
                             <Link href={"/myBlog"}>
                                 <Button variant="contained" color="success" startIcon={<LocalOfferIcon/>}>
-                                    My Blog
+                                    View My Blog
                                 </Button>
                             </Link>
                             <Link href={"/SignIn"}>
