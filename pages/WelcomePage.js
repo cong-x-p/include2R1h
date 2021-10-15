@@ -64,9 +64,13 @@ class WelcomePage extends React.Component {
                                     This is for my own
                                 </Button>
                             </Link>
-                            <Link href={"threejs"}>
+                        </Stack>
+                    </div>
+                    <div className={styles.buttonGroup}>
+                        <Stack direction={"row"} spacing={2}>
+                            <Link href={"/threejs"}>
                                 <Button variant={"contained"}>
-                                    hhh
+                                    A Little Try
                                 </Button>
                             </Link>
                         </Stack>
