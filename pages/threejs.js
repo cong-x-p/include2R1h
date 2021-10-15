@@ -2,16 +2,22 @@ import React from 'react';
 import * as THREE from 'three';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import styles from "../styles/threejs.module.css";
+import {MeshLambertMaterial, PointsMaterial} from "three";
 
 let renderer, camera, scene, light, controls;
 // const Dom = document.querySelector('#container');
 // const width = Dom.clientWidth, height = Dom.clientHeight;
 const globeTextureLoader = new THREE.TextureLoader();
 const group = new THREE.Group();
+const groupHalo = new THREE.Group();
 
 class Three extends React.Component {
     componentDidMount() {
         this.init()
+    }
+
+    componentWillUnmount() {
+        this.mount.removeChild(renderer.domElement)
     }
 
     init = () => {
@@ -24,6 +30,7 @@ class Three extends React.Component {
             this.initPoints();
             this.initEarth();
             this.initEarthAperture();
+            this.initSatellite();
             this.animate();
             window.addEventListener('resize', this.onWindowResize, false);
         };
@@ -173,8 +180,37 @@ class Three extends React.Component {
         group.add(sprite)
     }
 
-    componentWillUnmount() {
-        this.mount.removeChild(renderer.domElement)
+    //初始化卫星效果
+    initSatellite = () => {
+        globeTextureLoader.load("/halo.png", function (texture) {
+            const geometry = new THREE.PlaneGeometry(14, 14);
+            const material = new MeshLambertMaterial({
+                map: texture,
+                transparent: true,
+                side: THREE.DoubleSide,
+                depthWrite: false
+            });
+            const mesh = new THREE.Mesh(geometry, material);
+            groupHalo.add(mesh);
+        });
+
+        globeTextureLoader.load("/satellite.png", function (texture) {
+            const pos1 = new THREE.Vector3(-7, 0, 0);
+            const pos2 = new THREE.Vector3(7, 0, 0);
+            const positions = [pos1, pos2];
+            const geometry = new THREE.BufferGeometry().setFromPoints(positions);
+            const material = new PointsMaterial({
+                map: texture,
+                transparent: true,
+                side: THREE.DoubleSide,
+                size: 1,
+                depthWrite: false
+            });
+            const Points = new THREE.Points(geometry, material);
+            groupHalo.add(Points);
+        });
+        groupHalo.rotation.set(1.9, 0.5, 1);
+        scene.add(groupHalo);
     }
 
     render() {
